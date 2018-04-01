@@ -2,6 +2,7 @@
 declare(strict_types = 1);
 
 namespace SixDreams\Tests;
+
 use SixDreams\Model\PoorModel;
 use SixDreams\Model\RichModel;
 use SixDreams\Model\RichModelManyFields;
@@ -11,6 +12,9 @@ use SixDreams\Model\RichModelManyFields;
  */
 class PoorRichDiffTest extends AbstractModelTest
 {
+    /**
+     * Test is Rich model is faster than Poor?
+     */
     public function testRichIsReal()
     {
         $poor = $this->dumpWithModel(new PoorModel(ModelTestInterface::NAME));
@@ -19,6 +23,9 @@ class PoorRichDiffTest extends AbstractModelTest
         $this->makeAsserts($poor, $rich);
     }
 
+    /**
+     * Test is RichModel is faster that poor. Test include rich model with few fields.
+     */
     public function testOnManyFields()
     {
         $poor = $this->dumpWithModel(new PoorModel(ModelTestInterface::NAME));

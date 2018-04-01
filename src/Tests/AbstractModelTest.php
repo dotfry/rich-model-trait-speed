@@ -12,11 +12,6 @@ use SixDreams\Model\AbstractModel;
 abstract class AbstractModelTest extends TestCase
 {
     /**
-     * @var int
-     */
-    private $start;
-
-    /**
      * Do vary iterations of read on $model.
      *
      * @param AbstractModel $model
@@ -71,15 +66,15 @@ abstract class AbstractModelTest extends TestCase
      * @param AbstractModel $model
      * @param int           $amount
      *
-     * @return int
+     * @return float
      */
-    private function calculateSpeed(AbstractModel $model, int $amount)
+    private function calculateSpeed(AbstractModel $model, int $amount): float
     {
-        $this->start = \microtime(true);
+        $start = \microtime(true);
         for ($i = 0; $i < $amount; $i++) {
             $model->getName();
         }
 
-        return \microtime(true) - $this->start;
+        return \microtime(true) - $start;
     }
 }

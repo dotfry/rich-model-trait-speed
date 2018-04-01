@@ -8,10 +8,10 @@ namespace SixDreams\Tests;
  */
 interface ModelTestInterface
 {
-    // realistic call amount.
+    // Realistic call amount.
     public const AMOUNT_REAL = 1000;
 
-    // big amount, low amount of projects will use this amount of calls.
+    // Big amount, low amount of projects will use this amount of calls.
     public const AMOUNT_COOL = 1000000;
 
     // name field value.
