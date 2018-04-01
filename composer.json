@@ -1,0 +1,22 @@
+{
+  "name": "6dreams/rmt-tester",
+  "description": "6dreams Rich Model Speed Tester",
+  "type": "project",
+  "require": {
+    "6dreams/rich-model-trait": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit":              "6.5.3"
+  },
+
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "SixDreams\\": "src/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
