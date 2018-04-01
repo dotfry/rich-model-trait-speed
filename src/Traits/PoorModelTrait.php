@@ -25,6 +25,10 @@ trait PoorModelTrait
      */
     private function initPoorModelUtils(): void
     {
+        if ($this->poorMapExists !== null) {
+            return;
+        }
+
         $this->poorMapExists = \property_exists($this, RichModelInterface::RICH_MAP_NAME);
         if ($this->poorMapExists) {
             $this->poorMap = $this->{RichModelInterface::RICH_MAP_NAME};

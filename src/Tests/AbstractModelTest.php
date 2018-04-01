@@ -31,19 +31,24 @@ abstract class AbstractModelTest extends TestCase
     /**
      * Check diffs and verify that rich is really richer than poor.
      *
-     * @param array $poor
-     * @param array $rich
-     * @param bool  $dump
+     * @param array  $poor
+     * @param array  $rich
+     * @param string $dump
+     * @param bool   $richFaster
      */
-    protected function makeAsserts(array $poor, array $rich, bool $dump = false): void
+    protected function makeAsserts(array $poor, array $rich, string $dump = null, bool $richFaster = true): void
     {
         if ($dump) {
-            $this->writeCounts('Poor', $poor);
+            $this->writeCounts($dump, $poor);
             $this->writeCounts('Rich', $rich);
         }
 
         foreach (\array_keys($poor) as $key) {
-            self::assertLessThan($poor[$key], $rich[$key]);
+            if ($richFaster) {
+                self::assertLessThan($poor[$key], $rich[$key]);
+            } else {
+                self::assertLessThan($rich[$key], $poor[$key]);
+            }
         }
     }
 

@@ -2,6 +2,7 @@
 declare(strict_types = 1);
 
 namespace SixDreams\Model;
+
 use SixDreams\RichModel\Traits\RichModelTrait;
 
 /**
@@ -12,4 +13,5 @@ use SixDreams\RichModel\Traits\RichModelTrait;
 class RichModel extends AbstractModel
 {
     use RichModelTrait;
+
 }
